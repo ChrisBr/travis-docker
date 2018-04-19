@@ -7,7 +7,10 @@ jobs:
       - checkout
       - run:
           name: Greeting
-          command: echo Hello, world.
+          command: echo Hello, world > /tmp/echo.log; ls -la /tmp
+      - store_artifacts:
+          path: /tmp/echo.log
+          destination: foobar
   test:
     docker:
       - image: registry.opensuse.org/obs/server/unstable/container/sle12/sp3/images/x86_64/openbuildservice/frontend-base:latest
