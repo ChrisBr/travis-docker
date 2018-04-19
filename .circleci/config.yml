@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: debian:stretch
+      - image: registry.opensuse.org/obs/server/unstable/container/sle12/sp3/images/x86_64/openbuildservice/frontend-base:latest
     steps:
       - checkout
       - run:
